@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 const assert = chai.assert;
-const dotenv = require('../index.js');
+const dotenv = require('../lib/main.js');
 const MissingEnvVarsError = dotenv.MissingEnvVarsError;
 const fs = require('fs-extra');
 const clone = require('lodash.clonedeep');

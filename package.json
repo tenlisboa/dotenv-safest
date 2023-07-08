@@ -2,23 +2,45 @@
     "name": "dotenv-safest",
     "version": "1.0.0",
     "description": "Load environment variables from .env and ensure they are defined",
+    "main": "lib/main.js",
+    "types": "lib/main.d.ts",
+    "exports": {
+        ".": {
+            "import": "./lib/main.js",
+            "types": "./lib/main.d.ts",
+            "require": "./lib/main.js",
+            "default": "./lib/main.js"
+        },
+        "./config": "./config.js",
+        "./config.js": "./config.js",
+        "./lib/main.js": "./lib/main.js",
+        "./lib/config.js": "./lib/config.js"
+    },
     "keywords": [
-        "dotenv"
+        "dotenv",
+        "dotenv-safe",
+        "dotenv-safest",
+        "dotenv-safer",
+        "env",
+        ".env",
+        "environment",
+        "variables",
+        "config",
+        "settings"
     ],
     "license": "MIT",
     "author": "Gabriel Lisboa <gabriellisboa.rx@gmail.com>",
     "files": [
         "index.js",
         "config.js",
-        "MissingEnvVarsError.js"
+        "lib/*"
     ],
-    "main": "index.js",
     "repository": {
         "type": "git",
         "url": "git://github.com/tenlisboa/dotenv-safest.git"
     },
     "scripts": {
-        "pretest": "./node_modules/eslint/bin/eslint.js index.js config.js MissingEnvVarsError.js test/.",
+        "pretest": "./node_modules/eslint/bin/eslint.js *.js test/.",
         "test": "HELLO=fromTheOtherSide mocha"
     },
     "dependencies": {
